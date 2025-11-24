@@ -1,79 +1,110 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+🧠 AI Günlük Asistanım (AI Daily Journal Assistant)
 
-# Getting Started
+"Bugün nasıl hissediyorsun?"
+Kullanıcıların günlük duygu durumlarını analiz eden, ruh haline göre renk değiştiren ve internet olmasa bile çalışan yapay zeka destekli akıllı asistan.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+📱 Uygulama Önizlemesi (App Preview)
 
-## Step 1: Start the Metro Server
+Uygulama, duygu durumuna göre dinamik olarak renk, tema ve vektörel illüstrasyonları değiştirir.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+🌞 Pozitif Mod (Sarı Tema)
 
-To start Metro, run the following command from the _root_ of your React Native project:
+🌧️ Negatif / Nötr Mod
 
-```bash
-# using npm
-npm start
+📜 Geçmiş & İstatistikler
 
-# OR using Yarn
-yarn start
-```
+<img src="assets/home_positive.png" width="250" alt="Pozitif Ana Ekran" />
 
-## Step 2: Start your Application
+<img src="assets/home_negative.png" width="250" alt="Negatif Ana Ekran" />
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+<img src="assets/history_screen.png" width="250" alt="Geçmiş Ekranı" />
 
-### For Android
+🌟 Özellikler (MVP & Bonus)
 
-```bash
-# using npm
-npm run android
+🧠 Gerçek Zamanlı AI Analizi: Hugging Face Inference API (twitter-xlm-roberta-base-sentiment) kullanılarak yazılan metnin duygu analizi (Pozitif/Negatif/Nötr) yapılır.
 
-# OR using Yarn
-yarn android
-```
+🎨 Duygusal UI (Adaptive Design): Kullanıcının ruh haline göre uygulama rengi ve illüstrasyonlar anlık olarak değişir (Sarı=Mutlu, Gri=Üzgün, Mor=Nötr).
 
-### For iOS
+📡 Offline-First Mimarisi: İnternet bağlantısı kopsa bile uygulama çökmez, yerel "Mock AI" servisi devreye girer.
 
-```bash
-# using npm
-npm run ios
+💾 Kalıcı Veri: Tüm günlükler AsyncStorage ile cihazda güvenli bir şekilde saklanır.
 
-# OR using Yarn
-yarn ios
-```
+🛡️ Güvenli İstekler: Ağ katmanında Idempotency (Tekrarlanamazlık) anahtarı yönetimi.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+🛠️ Teknik Yığın (Tech Stack)
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Bu proje, modern React Native CLI ve Senior Yazılım Mimarisi prensipleri (Modüler Yapı, Separation of Concerns) kullanılarak geliştirilmiştir.
 
-## Step 3: Modifying your App
+Core: React Native CLI (JavaScript)
 
-Now that you have successfully run the app, let's modify it.
+State Management: Context API (JournalContext, AuthContext)
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Navigation: React Navigation (Bottom Tabs)
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+AI Provider: Hugging Face (Multilingual Sentiment Model)
 
-## Congratulations! :tada:
+UI Library: Linear Gradient, Vector Icons, Custom Illustrations
 
-You've successfully run and modified your React Native App. :partying_face:
+Architecture: Modular Pattern (API, Config, Context, Screens ayrımı)
 
-### Now what?
+📂 Proje Mimarisi
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+Spagetti koddan kaçınmak için ölçeklenebilir ve sürdürülebilir bir klasör yapısı tercih edilmiştir:
 
-# Troubleshooting
+src/
+├── api/          # API servisleri ve Mock yapısı (aiService.js)
+├── components/   # Tekrar kullanılabilir UI parçaları (SmartIllustration.js)
+├── config/       # Sabitler, Temalar ve API Anahtarları (theme.js, constants.js)
+├── context/      # Global State Yönetimi (JournalContext.js)
+├── screens/      # Kullanıcı arayüzü sayfaları (HomeScreen, HistoryScreen)
+└── utils/        # Yardımcı fonksiyonlar (helpers.js)
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+🚀 Kurulum ve Çalıştırma
 
-To learn more about React Native, take a look at the following resources:
+Bu projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. Ön Gereksinimler
+
+Node.js (>= 18)
+
+Java 17 (JDK 17) - Proje Java 17 ile uyumludur.
+
+Android Studio & SDK (API 34)
+
+2. Repoyu Klonlayın
+
+git clone [https://github.com/NevzatNas/GunlukAsistaniApp.git](https://github.com/NevzatNas/GunlukAsistaniApp.git)
+cd GunlukAsistaniApp
+
+
+3. Bağımlılıkları Yükleyin
+
+npm install
+
+
+4. Uygulamayı Başlatın
+
+npx react-native run-android
+
+
+🤖 AI Araç Kullanım Beyanı
+
+Bu projenin geliştirme sürecinde, kod kalitesini artırmak ve mimari kararları optimize etmek için AI Asistanlarından (LLM) faydalanılmıştır.
+
+Mimari: Projenin klasör yapısı ve "Separation of Concerns" prensibi AI rehberliğinde tasarlanmıştır.
+
+Hata Ayıklama: Gradle sürüm uyumsuzlukları, NDK hataları ve Java ortam değişkeni sorunları, AI ile pair-programming yapılarak çözülmüştür.
+
+Kod Üretimi: SmartIllustration bileşeni ve LinearGradient renk geçişleri için temel kod blokları AI desteğiyle oluşturulmuştur.
+
+🔑 API Konfigürasyonu
+
+Uygulama varsayılan olarak çalışır durumdadır. Kendi API anahtarınızı kullanmak isterseniz:
+
+src/config/constants.js dosyasını açın.
+
+HF_API_KEY alanına Hugging Face anahtarınızı yapıştırın.
+
+USE_MOCK: false olduğundan emin olun.
+
