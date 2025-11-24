@@ -107,4 +107,3 @@ HF_API_KEY alanına Hugging Face anahtarınızı yapıştırın.
 
 USE_MOCK: false olduğundan emin olun.
 
-Geliştirici: Nevzat Nas
