@@ -1,6 +1,7 @@
 🧠 AI Günlük Asistanım (AI Daily Journal Assistant)
 
 "Bugün nasıl hissediyorsun?"
+
 Kullanıcıların günlük duygu durumlarını analiz eden, ruh haline göre renk değiştiren ve internet olmasa bile çalışan yapay zeka destekli akıllı asistan.
 
 📱 Uygulama Önizlemesi (App Preview)
@@ -13,11 +14,9 @@ Uygulama, duygu durumuna göre dinamik olarak renk, tema ve vektörel illüstras
 
 📜 Geçmiş & İstatistikler
 
-<img src="assets/home_positive.png" width="250" alt="Pozitif Ana Ekran" />
-
-<img src="assets/home_negative.png" width="250" alt="Negatif Ana Ekran" />
-
-<img src="assets/history_screen.png" width="250" alt="Geçmiş Ekranı" />
+<img src="src/assets/home_positive.png" width="250" alt="Pozitif Ana Ekran" />
+<img src="src/assets/home_negative.png" width="250" alt="Negatif Ana Ekran" />
+<img src="src/assets/history_screen.png" width="250" alt="Geçmiş Ekranı" />
 
 🌟 Özellikler (MVP & Bonus)
 
@@ -108,3 +107,4 @@ HF_API_KEY alanına Hugging Face anahtarınızı yapıştırın.
 
 USE_MOCK: false olduğundan emin olun.
 
+Geliştirici: Nevzat Nas
